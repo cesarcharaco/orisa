@@ -1,0 +1,65 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+
+class ClientsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+      	$faker = Faker::create();
+
+        for ($i=0; $i<10; $i++)
+        {
+       	    \DB::table('clients')->insert(array (
+			    'dni_cedula' => $faker->randomElement($array = array ('V', 'E')).'-'.$faker->numberBetween($min = 200000000, $max = 25000000),
+			    'nombre'    => $faker->firstName.' '.$faker->lastName,
+                'ciudad' => $faker->cityPrefix,
+                'calle' => $faker->streetName,
+                'habitacion' => $faker->buildingNumber,
+                'direccion'  => $faker->address,
+                'operadora'  => $faker->buildingNumber,
+			    'telefono'   => $faker->ean8,
+                'correo'    => $faker->email,
+            ));
+        }
+
+        \DB::table('clients')->insert(array (
+                'dni_cedula' => 'V-25607793',
+                'nombre'    => 'Saul',
+                'ciudad' => $faker->cityPrefix,
+                'calle' => $faker->streetName,
+                'habitacion' => $faker->buildingNumber,
+                'direccion'  => 'Calle 5 marzo #30-11',
+                'operadora'  => '0414',
+                'telefono'   => '5899312',
+        ));
+
+        \DB::table('clients')->insert(array (
+                'dni_cedula' => 'V-25607794',
+                'nombre'    => 'Cliente',
+                'ciudad' => $faker->cityPrefix,
+                'calle' => $faker->streetName,
+                'habitacion' => $faker->buildingNumber,
+                'direccion'  => 'Calle 5 marzo #30-11',
+                'operadora'  => '0414',
+                'telefono'   => '5899312',
+        ));
+
+        \DB::table('clients')->insert(array (
+                'dni_cedula' => 'V-25607795',
+                'nombre'    => 'Carlos',
+                'ciudad' => $faker->cityPrefix,
+                'calle' => $faker->streetName,
+                'habitacion' => $faker->buildingNumber,
+                'direccion'  => 'Av bolivar marzo #50-21',
+                'operadora'  => '0424',
+                'telefono'   => '5899312',
+        ));
+    }
+}

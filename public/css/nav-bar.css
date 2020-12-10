@@ -1,0 +1,31 @@
+.navbar-default {
+    height: 50px;
+    border: 0;
+}
+
+.logo {
+	 padding-left: 0px; 
+	 padding-right: 0px;
+	 height: 50px;
+	 width: 129px;
+}
+
+.navbar-brand {
+    margin-top: 10px;
+    padding: 0;
+    width: 370px;
+    display: inline-block;
+}
+
+/* EXAMPLE 5 - Logo with Text*/
+.example5 .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.example5 .navbar-brand > img {
+  padding: 7px 14px;
+}
+
+.fa-x{
+  font-size: 34px;
+}
